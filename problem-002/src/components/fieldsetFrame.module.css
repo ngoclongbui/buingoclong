@@ -1,0 +1,24 @@
+.container {
+  margin-top: 20px;
+}
+
+.fieldset {
+  padding: 20px 10px;
+  border: 1px solid #282c34;
+  border-radius: 5px;
+  width: 600px;
+  height: 360px;
+  box-sizing: border-box;
+}
+
+.fieldset .legend {
+  padding: 0 10px;
+  font-size: 26px;
+  color: #282c34
+}
+
+.contentFrame {
+  padding: 0 12px;
+  max-width: 100%;
+  height: 100%;
+}

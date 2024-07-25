@@ -1,0 +1,43 @@
+
+.converter {
+  max-width: 100%;
+  height: 100%;
+}
+
+.input {
+  background: transparent;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #282c34;
+  outline: none;
+  transition: all 0.4s;
+  border-radius: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #282c34;
+}
+
+.input:focus-visible {
+  border-radius: 8px;
+  border-color: transparent;
+  box-shadow:
+    2px 2px 2px 0 rgba(0, 0, 0, 0.1) inset,
+    -2px -2px 12px 0 rgba(255, 255, 255) inset;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.selectFrame {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
