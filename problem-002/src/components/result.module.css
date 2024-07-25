@@ -1,6 +1,6 @@
 .resultFrame {
   max-width: calc(600px - 46px);
-  height: 50%;
+  height: calc(100% - 50px);
   display: flex;
   align-items: center;
 }

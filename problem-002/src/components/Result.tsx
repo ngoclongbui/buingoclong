@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import classes from "./result.module.css";
 
-const Result: React.FC<{ value: string }> = ({ value }) => {
+const Result: React.FC<{ value: string }> = ({ value }): React.JSX.Element => {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

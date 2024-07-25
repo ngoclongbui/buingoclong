@@ -22,7 +22,11 @@ const ClickOutsideHandler: React.FC<ClickOutsideHandlerProps> = ({ onClickOutsid
     };
   }, [onClickOutside]);
 
-  return <div ref={wrapperRef}>{children}</div>;
+  return (
+    <div ref={wrapperRef} style={{ height: "calc(100% - 76px" }}>
+      {children}
+    </div>
+  );
 };
 
 export default ClickOutsideHandler;
