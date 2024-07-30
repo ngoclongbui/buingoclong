@@ -7,6 +7,7 @@ interface FormattedWalletBalance {
   currency: string;
   amount: number;
   formatted: string;
+  // 2. Formatted need extends by WalletBalance, cover for WalletBalance will change
 }
 
 interface Props extends BoxProps {}
@@ -30,23 +31,23 @@ const WalletPage: React.FC<Props> = (props: Props) => {
       default:
         return -99;
     }
-    // 2. Can using object to find value. Because getPriority don't do anything with the data either.
+    // 3. Can using object to find value. Because getPriority don't do anything with the data either.
   };
 
   const sortedBalances = useMemo(() => {
     return balances
       .filter((balance: WalletBalance) => {
         const balancePriority = getPriority(balance.blockchain);
-        // 3. Property 'blockchain' does not exist on type 'WalletBalance'.
+        // 4. Property 'blockchain' does not exist on type 'WalletBalance'.
         if (lhsPriority > -99) {
-          // 4. Cannot find name 'lhsPriority'. It is can be the balancePriority.
+          // 5. Cannot find name 'lhsPriority'. It is can be the balancePriority.
           if (balance.amount <= 0) {
             return true;
           }
         }
 
         return false;
-        // 5. Just can be using one line for this result filter.
+        // 6. Just can be using one line for this result filter.
       })
       .sort((lhs: WalletBalance, rhs: WalletBalance) => {
         const leftPriority = getPriority(lhs.blockchain);
@@ -58,7 +59,7 @@ const WalletPage: React.FC<Props> = (props: Props) => {
         }
       });
   }, [balances, prices]);
-  // 6. Even if the price changes, it does not affect the balance values.
+  // 7. Even if the price changes, it does not affect the balance values.
 
   const formattedBalances = sortedBalances.map((balance: WalletBalance) => {
     return {
@@ -66,10 +67,10 @@ const WalletPage: React.FC<Props> = (props: Props) => {
       formatted: balance.amount.toFixed(),
     };
   });
-  // 7. FormattedBalances has not been used.
+  // 8. FormattedBalances has not been used.
 
   const rows = sortedBalances.map((balance: FormattedWalletBalance, index: number) => {
-    // 8.
+    // 9.
     // - sortedBalances is not FormattedWalletBalance type, in this context it is WalletBalance.
     // - and if this is a mistake of the variable name, we can using 1 loop for problem (formatted and return in new value).
     const usdValue = prices[balance.currency] * balance.amount;

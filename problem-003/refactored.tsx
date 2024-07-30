@@ -4,9 +4,7 @@ interface WalletBalance {
   blockchain: string;
 }
 
-interface FormattedWalletBalance {
-  currency: string;
-  amount: number;
+interface FormattedWalletBalance extends WalletBalance {
   formatted: string;
 }
 
